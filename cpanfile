@@ -1,10 +1,17 @@
 requires 'perl', '5.008005';
 requires 'strict';
 requires 'warnings';
-requires 'Carp';
+requires 'parent';
+requires 'Plack::Middleware';
+requires 'Plack::Util::Accessor';
+requires 'Plack::Response';
+requires 'HTTP::Status';
 
 on 'test' => sub {
     requires 'Test::More', '0.88';
+    requires 'Plack::Builder';
+    requires 'HTTP::Request::Common';
+    requires 'Plack::Test';
 };
 
 on 'configure' => sub {
